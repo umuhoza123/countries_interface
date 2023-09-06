@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Information</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="top-card">
+        <header class="top-bar">
+            <h4>where your country in the world?</h4>
+            <nav class="top-nav">
+                <div class="dark-mode-toggle">
+                    <i class="fas fa-moon"></i> <!-- Moon icon for Dark Mode -->
+                    <span class="dark-mode-text">Dark Mode</span>
+                </div>
+            </nav>
+        </header>
+    </div>
+    
+    <div class="header">
+        <h1>Country Information</h1>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search by country name">
+            <button id="searchButton">Search</button>
+        </div>
+        <select id="countryDropdown">
+            <option value="">-- Select a country --</option>
+        </select>
+    </div>
+    <div id="countryCardContainer" class="country-card-container">
+        <!-- Country cards will be populated here -->
+    </div>
+    <div class="country-details">
+        <div class="country-info">
+            <img id="countryImage" src="" alt="Country Flag">
+            <h2 id="countryName"></h2>
+         
+            <p id="countryPopulation"></p>
+           
+            <p id="countryCapital"></p>
+            <p id="countryRegion"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
