@@ -1,3 +1,3 @@
 # countries_interface
 
-This iinterface that fetch country in card from api and update ir
+This interface that fetch country in card from api and information and make search for specified country And region
