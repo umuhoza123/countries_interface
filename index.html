@@ -12,23 +12,25 @@
             <h4>where your country in the world?</h4>
             <nav class="top-nav">
                 <div class="dark-mode-toggle">
-                    <i class="fas fa-moon"></i> <!-- Moon icon for Dark Mode -->
-                    <span class="dark-mode-text">Dark Mode</span>
+                    <button id="mode-toggle">Dark Mode</button> <!-- Moon icon for Dark Mode -->
+                    <span class="dark-mode-text"></span>
                 </div>
             </nav>
         </header>
     </div>
     
-    <div class="header">
-        <h1>Country Information</h1>
-        <div class="search-bar">
-            <input type="text" id="searchInput" placeholder="Search by country name">
-            <button id="searchButton">Search</button>
+    <div class="header" style="display: flex; justify-content: space-between">
+        <div class="search-bar" style="display: flex; flex-grow: 1; margin-right: 5px;">
+            <input type="text" id="searchInput" placeholder="Search by country name" style="flex-grow: 1; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+            <button id="searchButton" style="background-color: #007BFF; color: #fff; border: none; border-radius: 5px; padding: 10px;">Search</button>
         </div>
-        <select id="countryDropdown">
-            <option value="">-- Select a country --</option>
+        
+        <h1 style="flex: 2; font-size: 24px; color: #333;"></h1>
+        <select id="regionDropdown" style="padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+            <option value="">-- By a region --</option>
         </select>
     </div>
+    
     <div id="countryCardContainer" class="country-card-container">
         <!-- Country cards will be populated here -->
     </div>

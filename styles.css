@@ -1,14 +1,41 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+/* Light mode styles */
+body.light-mode {
+    background-color: #fff;
+    color: #000;
 }
 
-.header {
-    background-color: #333;
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #000;
+    color: #fff;
+}
+
+.country-card-container.light-mode {
+    background-color: #fff;
+    color: #000;
+}
+
+.country-card-container.dark-mode {
+    background-color: #000;
+    color: #fff;
+}
+
+.country-card.light-mode {
+    background-color: white;
+    color: #000;
+    /* Other light mode card styles */
+}
+
+.country-card.dark-mode {
+    background-color: #000;
     color: white;
-    padding: 20px;
-    text-align: center;
+    /* Other dark mode card styles */
+}
+
+
+
+.header {
+     align-items: center; background-color: #f0f0f0; padding: 10px;
 }
 
 .search-bar {
@@ -46,6 +73,18 @@ body {
 /* ... (previous CSS code) ... */
 
 /* ... (previous CSS code) ... */
+
+
+.country-card-container.dark-mode{
+    background-color: #000;
+    color: #fff;
+
+}
+.country-card-container.light-mode{
+    background-color: #fff;
+    color: #000;
+
+}
 
 .country-card-container {
     display: flex;
@@ -143,3 +182,48 @@ body {
 }
 
 /* ... (previous CSS code) ... */
+
+
+.top-card.light-mode {
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    margin: 10px;
+    /* Other light mode styles for top-card */
+}
+
+.top-card.dark-mode {
+    background-color:#000; /* Dark mode background color */
+    color: white; 
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px 0px rgba(243, 243, 243, 0.815);
+    padding: 10px;
+    margin: 10px;
+    
+    /* Dark mode text color */
+    /* Other dark mode styles for top-card */
+}
+
+.header.light-mode {
+    background-color: #f0f0f0;
+    color:#000;
+
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    margin: 10px;
+    /* Other light mode styles for header */
+}
+
+.header.dark-mode {
+    background-color: #000; /* Dark mode background color */
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px 0px rgba(243, 243, 243, 0.815);
+    padding: 10px;
+    margin: 10px;
+    
+    /* Dark mode text color */
+    /* Other dark mode styles for header */
+}

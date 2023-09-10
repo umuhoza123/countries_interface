@@ -25,6 +25,31 @@ function fetchCountryData() {
             console.error('Error fetching country data:', error);
         });
 }
+// Function to toggle between light mode and dark mode
+function toggleMode() {
+    const body = document.body;
+    body.classList.toggle("light-mode");
+    body.classList.toggle("dark-mode");
+
+    const countryCards = document.querySelectorAll('.country-card');
+    countryCards.forEach(card => {
+        card.classList.toggle("light-mode");
+        card.classList.toggle("dark-mode");
+    });
+
+    const topCard = document.querySelector('.top-card');
+    topCard.classList.toggle("light-mode");
+    topCard.classList.toggle("dark-mode");
+
+    const header = document.querySelector('.header');
+    header.classList.toggle("light-mode");
+    header.classList.toggle("dark-mode");
+
+
+}
+// Add click event listener to the mode toggle button
+const modeToggleBtn = document.getElementById("mode-toggle");
+modeToggleBtn.addEventListener("click", toggleMode);
 
 // Function to create a country card
 function createCountryCard(country) {
@@ -100,17 +125,39 @@ searchButton.addEventListener('click', () => {
 fetchCountryData();
 
 
-function populateCountryDropdown(){
-    fetch('https://restcountries/v3.1/all')
-    .then(response=>response.json())
-    .then(data =>{
-        data.forEach(country=>{
-            const option = document.createElement('option');
-            option.value=country.name.common;
-            option.textContent= country.name.common;
-            countryDropdown.appendChild(option);
-        });
-    })
+const regionDropdown = document.getElementById('regionDropdown');
 
-    .catch(error =>{console.error('error fetching country list:', error)})
+function populateRegionDropdown() {
+    fetch('https://restcountries.com/v3.1/all?fields=region')
+        .then(response => response.json())
+        .then(data => {
+            const regions = data.reduce((uniqueRegions, country) => {
+                const region = country.region;
+                if (region && !uniqueRegions.includes(region)) {
+                    uniqueRegions.push(region);
+                }
+                return uniqueRegions;
+            }, []);
+
+            regions.forEach(region => {
+                const option = document.createElement('option');
+                option.value = region;
+                option.textContent = region;
+                regionDropdown.appendChild(option);
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching regions:', error);
+        });
 }
+
+// Add an event listener to the region dropdown
+regionDropdown.addEventListener('change', () => {
+    const selectedRegion = regionDropdown.value;
+
+    // You can filter the country data based on the selected region if needed
+    // and update the country card container here.
+});
+
+// Initialize the interface
+populateRegionDropdown(); // Populate the region dropdown when the page loads
